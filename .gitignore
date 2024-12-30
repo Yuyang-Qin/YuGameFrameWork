@@ -1,0 +1,62 @@
+# Ignore the following files and folders:
+
+# Unity generated folders and files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Avoid uploading auto-generated Visual Studio files
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.unityproj
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+
+# TextMesh Pro generated assets
+TextMesh Pro/
+
+# Unity Addressable Assets
+/Assets/AddressableAssetsData/
+
+# Ignore crash reports, large temp files, etc.
+*.stackdump
+*.tmp
+*.temp
+*.bak
+*.swp
+*.lock
+*.gz
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Packages
+[Pp]ackages/*
+
+# Exclude dependencies except manifest files
+!Packages/manifest.json
+!Packages/packages-lock.json
+
+# Prevent UPM packages from storing cache
+npm/
+
+# Serialized layouts (avoid pushing developer-specific layout files)
+*.wlt
+My project/In_Game/Log/
+
+My project/UserSettings/Layouts/default-2022.dwlt
+
+*.meta
