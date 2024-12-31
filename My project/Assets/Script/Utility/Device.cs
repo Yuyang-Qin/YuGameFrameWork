@@ -1,24 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Screen = UnityEngine.Device.Screen;
 
 namespace Script.Utility
 {
-    public static class Device
+    [Serializable]
+    public class Device
     {
-        public static string devicePlatform => Application.platform.ToString();
-        public static string deviceModel => SystemInfo.deviceModel;
-        public static string deviceType => SystemInfo.deviceType.ToString();
+        private static Device _instance = null;
+        public static Device instance = _instance ??= new Device();
         
-        public static float screenWidth => Screen.currentResolution.width;
-        public static float screenHeight => Screen.currentResolution.height;
+        public string devicePlatform = Application.platform.ToString();
+        public string deviceModel = SystemInfo.deviceModel;
+        public string deviceType = SystemInfo.deviceType.ToString();
+        
+        public float screenWidth() => Screen.currentResolution.width;
+        public float screenHeight() => Screen.currentResolution.height;
 
-        public static int systemMemorySize => SystemInfo.systemMemorySize;
-        public static int graphicsMemorySize => SystemInfo.graphicsMemorySize;
+        public int systemMemorySize = SystemInfo.systemMemorySize;
+        public int graphicsMemorySize = SystemInfo.graphicsMemorySize;
 
-        public static string graphicsDevicName => SystemInfo.graphicsDeviceName;
-        public static string graphicsDevicVender => SystemInfo.graphicsDeviceVendor;
-        public static string graphicsDeviceType => SystemInfo.graphicsDeviceType.ToString();
+        public string graphicsDevicName = SystemInfo.graphicsDeviceName;
+        public string graphicsDevicVender = SystemInfo.graphicsDeviceVendor;
+        public string graphicsDeviceType = SystemInfo.graphicsDeviceType.ToString();
 
-        public static string unityVersion => Application.unityVersion;
+        public string unityVersion = Application.unityVersion;
     }
 }

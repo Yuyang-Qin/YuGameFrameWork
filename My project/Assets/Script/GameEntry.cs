@@ -1,7 +1,8 @@
 ﻿using System;
 using Script.Utility;
 using UnityEngine;
-using Logger = Script.Utility.Logger.Logger;
+using Script.Utility.Logger;
+using customLogger = Script.Utility.Logger.Logger;
 
 namespace Script
 {
@@ -9,7 +10,12 @@ namespace Script
     {
         private void Awake()
         {
-            // Logger.LogInfo("");
+            customLogger.Init();
+        }
+
+        private void OnDestroy()
+        {
+            customLogger.Finish();
         }
     }
 }
